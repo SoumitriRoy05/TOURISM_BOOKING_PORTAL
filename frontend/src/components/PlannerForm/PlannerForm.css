@@ -1,0 +1,42 @@
+.planner-form{
+margin-top:-60px;
+display:flex;
+justify-content:center;
+position:relative;
+z-index:10;
+}
+
+.planner-card{
+width:90%;
+max-width:1300px;
+background:white;
+padding:35px;
+border-radius:28px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+box-shadow:0 20px 40px rgba(0,0,0,.12);
+}
+
+.planner-card input,
+.planner-card select{
+padding:16px;
+border:1px solid #ddd;
+border-radius:14px;
+font-size:16px;
+}
+
+.planner-card button{
+grid-column:span 3;
+padding:18px;
+background:#FF7A00;
+border:none;
+border-radius:18px;
+color:white;
+font-size:18px;
+font-weight:600;
+cursor:pointer;
+display:flex;
+justify-content:center;
+gap:10px;
+}

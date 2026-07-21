@@ -1,0 +1,67 @@
+.routes{
+
+padding:80px 8%;
+
+background:#F8FAFC;
+
+}
+
+.route-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+gap:25px;
+
+margin-top:45px;
+
+}
+
+.route-card{
+
+background:white;
+
+padding:30px;
+
+border-radius:25px;
+
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+text-align:center;
+
+transition:.3s;
+
+}
+
+.route-card:hover{
+
+transform:translateY(-8px);
+
+}
+
+.route-card h1{
+
+color:#FF7A00;
+
+margin:20px 0;
+
+}
+
+.route-card button{
+
+width:100%;
+
+padding:14px;
+
+border:none;
+
+border-radius:30px;
+
+background:#0F172A;
+
+color:white;
+
+cursor:pointer;
+
+}

@@ -1,0 +1,55 @@
+.hotel-filters{
+
+background:white;
+
+padding:30px;
+
+border-radius:25px;
+
+box-shadow:0 20px 40px rgba(0,0,0,.08);
+
+position:sticky;
+
+top:120px;
+
+}
+
+.hotel-filters h2{
+
+margin-bottom:25px;
+
+color:#0F172A;
+
+}
+
+.filter-box{
+
+margin-bottom:35px;
+
+}
+
+.filter-box h4{
+
+margin-bottom:15px;
+
+color:#FF7A00;
+
+}
+
+.filter-box label{
+
+display:block;
+
+margin:12px 0;
+
+cursor:pointer;
+
+color:#555;
+
+}
+
+input[type="range"]{
+
+width:100%;
+
+}
