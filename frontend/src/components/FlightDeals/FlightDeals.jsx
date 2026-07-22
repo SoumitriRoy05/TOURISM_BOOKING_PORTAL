@@ -1,102 +1,101 @@
 import "./FlightDeals.css";
+import { useState } from "react";
+import { FaPlane, FaLongArrowAltRight, FaLuggageCart, FaClock, FaCheckCircle } from "react-icons/fa";
 
-import flights from "../../data/flights";
+function FlightDeals({ flightsList = [] }) {
+  const [bookedFlight, setBookedFlight] = useState(null);
 
-function FlightDeals(){
+  const handleBook = (flight) => {
+    setBookedFlight(flight);
+    setTimeout(() => {
+      setBookedFlight(null);
+    }, 4000);
+  };
 
-return(
+  return (
+    <section className="flight-results-container">
+      
+      {/* Booking Toast Alert */}
+      {bookedFlight && (
+        <div className="booking-toast-alert">
+          <FaCheckCircle className="toast-icon" />
+          <div>
+            <strong>Flight Booking Confirmed!</strong>
+            <p>{bookedFlight.airline} ({bookedFlight.code}) • {bookedFlight.from} → {bookedFlight.to} for {bookedFlight.formattedPrice}</p>
+          </div>
+        </div>
+      )}
 
-<section className="results">
+      <div className="results-count-bar">
+        <span>Available Flight Deals ({flightsList.length})</span>
+      </div>
 
-{flights.map((flight)=>(
+      {flightsList.length === 0 ? (
+        <div className="no-flights-box">
+          <FaPlane className="no-flights-icon" />
+          <h3>No Flights Match Your Selected Filters</h3>
+          <p>Try adjusting your price range or airline selections.</p>
+        </div>
+      ) : (
+        <div className="flight-deals-list">
+          {flightsList.map((flight) => (
+            <div className="flight-deal-card" key={flight.id}>
+              
+              {/* Airline Badge */}
+              <div className="deal-airline-block">
+                <div className="airline-icon-circle">
+                  <FaPlane className="plane-mini" />
+                </div>
+                <div>
+                  <h4>{flight.airline}</h4>
+                  <span className="flight-code">{flight.code}</span>
+                </div>
+              </div>
 
-<div
-className="result-card"
-key={flight.id}
->
+              {/* Timing & Route */}
+              <div className="deal-route-block">
+                <div className="time-col text-right">
+                  <span className="flight-time">{flight.departure}</span>
+                  <span className="city-code">{flight.from}</span>
+                </div>
 
-<div>
+                <div className="duration-col">
+                  <span className="duration-text"><FaClock className="clock-icon" /> {flight.duration}</span>
+                  <div className="flight-line-accent">
+                    <span className="line-dot left"></span>
+                    <FaLongArrowAltRight className="line-arrow" />
+                    <span className="line-dot right"></span>
+                  </div>
+                  <span className="stop-badge">{flight.stops}</span>
+                </div>
 
-<h2>
+                <div className="time-col">
+                  <span className="flight-time">{flight.arrival}</span>
+                  <span className="city-code">{flight.to}</span>
+                </div>
+              </div>
 
-{flight.airline}
+              {/* Price & Features */}
+              <div className="deal-price-block">
+                <span className="deal-badge">{flight.badge}</span>
+                <h3 className="price-tag">{flight.formattedPrice}</h3>
+                <span className="seats-left-tag">{flight.seatsLeft} seats left</span>
+              </div>
 
-</h2>
+              {/* CTA Action */}
+              <div className="deal-action-block">
+                <button className="book-flight-btn" onClick={() => handleBook(flight)}>
+                  Book Flight
+                </button>
+              </div>
 
-<p>
+            </div>
+          ))}
+        </div>
+      )}
 
-{flight.from}
-
-→
-
-{flight.to}
-
-</p>
-
-</div>
-
-<div>
-
-<h3>
-
-{flight.departure}
-
-</h3>
-
-<p>
-
-{flight.duration}
-
-</p>
-
-<h3>
-
-{flight.arrival}
-
-</h3>
-
-</div>
-
-<div>
-
-<span>
-
-{flight.stops}
-
-</span>
-
-</div>
-
-<div>
-
-<h2>
-
-{flight.price}
-
-</h2>
-
-<p className="badge">
-
-{flight.badge}
-
-</p>
-
-</div>
-
-<button>
-
-Book Flight
-
-</button>
-
-</div>
-
-))}
-
-</section>
-
-);
-
+    </section>
+  );
 }
 
-export default FlightDeals;
+export default FlightDeals;

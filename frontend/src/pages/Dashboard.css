@@ -1,11 +1,93 @@
-.dashboard {
-    display: flex;
-    min-height: 100vh;
-    background: #F4F7FC;
+/* ===========================
+   DASHBOARD PAGE (Image 2 Liquid Dark Aurora Theme)
+=========================== */
+
+.dashboard-page-dark {
+  position: relative;
+  min-height: 100vh;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  overflow-x: hidden;
 }
 
-.dashboard-main {
-    flex: 1;
-    margin-left: 260px;
-    padding: 35px;
+/* Background Liquid Blobs Container (Image 2) */
+.dashboard-aurora-bg {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: 1;
+  pointer-events: none;
 }
+
+.liquid-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.55;
+  animation: blobFloat 14s infinite alternate cubic-bezier(0.45, 0.05, 0.55, 0.95);
+}
+
+.blob-cyan {
+  width: 500px;
+  height: 500px;
+  top: -100px;
+  right: -50px;
+  background: radial-gradient(circle, #00f2fe 0%, #0b031e 70%);
+}
+
+.blob-purple {
+  width: 600px;
+  height: 600px;
+  bottom: -150px;
+  left: -100px;
+  background: radial-gradient(circle, #7b2cbf 0%, #0b031e 75%);
+  animation-duration: 18s;
+  animation-delay: -5s;
+}
+
+.blob-deep {
+  width: 450px;
+  height: 450px;
+  top: 40%;
+  left: 35%;
+  background: radial-gradient(circle, #9d4edf 0%, transparent 70%);
+  animation-duration: 16s;
+  animation-delay: -8s;
+}
+
+@keyframes blobFloat {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(60px, 40px) scale(1.15); }
+  100% { transform: translate(-40px, 80px) scale(0.9); }
+}
+
+.dashboard-mesh-grid {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(0, 242, 254, 0.08) 1px, transparent 0);
+  background-size: 32px 32px;
+  opacity: 0.4;
+}
+
+.dashboard-layout {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  min-height: 100vh;
+}
+
+.dashboard-main-content {
+  flex: 1;
+  margin-left: 270px;
+  padding: 35px 40px 60px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+@media (max-width: 1024px) {
+  .dashboard-main-content {
+    margin-left: 0;
+    padding: 25px 20px;
+  }
+}

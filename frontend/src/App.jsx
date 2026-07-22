@@ -181,40 +181,44 @@ import Hotels from "./pages/Hotels";
 import Flights from "./pages/Flights";
 import AIPlanner from "./pages/AIPlanner";
 import Reviews from "./pages/Reviews";
-import Contact from "./pages/Contact";
 import PackageDetails from "./pages/PackageDetails";
 import Login from "./pages/Login";
+import Register from "./pages/Register";
+import ForgotPassword from "./pages/ForgotPassword";
 import Dashboard from "./pages/Dashboard";
 import ProtectedRoute from "./components/ProtectedRoute";
+import AIPlannerModal from "./components/AIPlannerModal/AIPlannerModal";
+
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/packages/:id" element={<PackageDetails />} />
-      <Route path="/packages" element={<Packages />} />
-      <Route path="/hotels" element={<Hotels />} />
-      <Route path="/flights" element={<Flights />} />
-      <Route path="/planner" element={<AIPlanner />} />
-      <Route path="/reviews" element={<Reviews />} />
-      <Route path="/contact" element={<Contact />} />
-      <Route path="/login" element={<Login />} />
-      <Route
+    <>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/packages/:id" element={<PackageDetails />} />
+        <Route path="/packages" element={<Packages />} />
+        <Route path="/hotels" element={<Hotels />} />
+        <Route path="/flights" element={<Flights />} />
+        <Route path="/planner" element={<AIPlanner />} />
+        <Route path="/reviews" element={<Reviews />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute>
+              <Dashboard/>
+            </ProtectedRoute>
+          }
+        />
+      </Routes>
 
-      path="/dashboard"
-
-      element={
-
-      <ProtectedRoute>
-
-      <Dashboard/>
-
-      </ProtectedRoute>
-
-      }
-
-      />
-    </Routes>
+      {/* Global AI Planner Pop-up / Floating Drawer on All Landing Pages */}
+      <AIPlannerModal />
+    </>
   );
 }
 
 export default App;
+
+

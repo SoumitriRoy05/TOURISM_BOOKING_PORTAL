@@ -1,17 +1,20 @@
 .destination-card{
     position:relative;
     height:420px;
-    border-radius:25px;
+    border-radius:24px;
     overflow:hidden;
     background-size:cover;
     background-position:center;
-    transition:.5s;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     cursor:pointer;
+    border: 1px solid rgba(0, 242, 254, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .destination-card:hover{
-    transform:translateY(-12px);
-    box-shadow:0 25px 45px rgba(0,0,0,.25);
+    transform:translateY(-10px) scale(1.02);
+    box-shadow:0 20px 45px rgba(0, 0, 0, 0.7), 0 0 25px rgba(0, 242, 254, 0.45);
+    border-color: var(--neon-cyan);
 }
 
 .destination-card::before{
@@ -19,13 +22,11 @@
     position:absolute;
     inset:0;
     background:linear-gradient(
-        transparent,
-        rgba(0,0,0,.85)
+        180deg,
+        rgba(11, 3, 30, 0.15) 0%,
+        rgba(11, 3, 30, 0.92) 85%
     );
-}
-
-.destination-card:hover{
-    background-size:110%;
+    transition: opacity 0.3s ease;
 }
 
 .card-overlay{
@@ -34,16 +35,20 @@
     display:flex;
     flex-direction:column;
     justify-content:space-between;
-    padding:20px;
+    padding:24px;
+    z-index: 2;
 }
 
 .price-badge{
     align-self:flex-start;
-    background:#FF8A00;
-    color:white;
-    padding:8px 16px;
-    border-radius:30px;
-    font-weight:600;
+    background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple-deep));
+    color: #ffffff;
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 0 15px rgba(0, 242, 254, 0.4);
 }
 
 .bottom-content{
@@ -53,27 +58,38 @@
 .location{
     font-size:26px;
     font-weight:700;
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .rating{
-    margin:12px 0;
-    color:gold;
+    margin:10px 0;
+    color: #00f2fe;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
 }
 
 .bottom-content button{
     margin-top:15px;
     width:100%;
     padding:14px;
-    border:none;
+    border: 1px solid var(--neon-cyan);
     border-radius:40px;
-    background:rgba(255,255,255,.18);
+    background: rgba(0, 242, 254, 0.1);
     backdrop-filter:blur(10px);
     color:white;
-    font-size:17px;
+    font-size:16px;
+    font-weight: 600;
     cursor:pointer;
-    transition:.3s;
+    transition: all 0.3s ease;
 }
 
 .bottom-content button:hover{
-    background:#FF8A00;
-}
+    background: var(--neon-cyan);
+    color: #0b031e;
+    box-shadow: 0 0 20px rgba(0, 242, 254, 0.6);
+}

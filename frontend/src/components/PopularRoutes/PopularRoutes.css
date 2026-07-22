@@ -1,67 +1,138 @@
-.routes{
+/* ===========================
+   POPULAR ROUTES SECTION
+=========================== */
 
-padding:80px 8%;
-
-background:#F8FAFC;
-
+.popular-routes-section {
+  padding: 80px 8%;
+  background: var(--bg-dark-secondary);
+  position: relative;
+  z-index: 10;
 }
 
-.route-grid{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-
-gap:25px;
-
-margin-top:45px;
-
+.routes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
-.route-card{
-
-background:white;
-
-padding:30px;
-
-border-radius:25px;
-
-box-shadow:0 15px 35px rgba(0,0,0,.08);
-
-text-align:center;
-
-transition:.3s;
-
+.route-card-glass {
+  background: rgba(22, 11, 44, 0.75);
+  border: 1px solid rgba(0, 242, 254, 0.2);
+  backdrop-filter: blur(16px);
+  padding: 24px 22px;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  transition: all 0.35s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-.route-card:hover{
-
-transform:translateY(-8px);
-
+.route-card-glass:hover {
+  transform: translateY(-8px);
+  border-color: var(--neon-cyan);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7), 0 0 25px rgba(0, 242, 254, 0.35);
 }
 
-.route-card h1{
-
-color:#FF7A00;
-
-margin:20px 0;
-
+.route-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.route-card button{
-
-width:100%;
-
-padding:14px;
-
-border:none;
-
-border-radius:30px;
-
-background:#0F172A;
-
-color:white;
-
-cursor:pointer;
-
+.city-name {
+  font-size: 18px;
+  font-weight: 800;
+  color: #ffffff;
+  font-family: 'Outfit', sans-serif;
 }
+
+.text-right {
+  text-align: right;
+}
+
+.route-arrow-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.route-arrow-icon {
+  color: var(--neon-cyan);
+  font-size: 14px;
+}
+
+.route-duration {
+  font-size: 11px;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.06);
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.route-bottom-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.route-carrier-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-muted);
+  font-size: 13.5px;
+  font-weight: 500;
+}
+
+.carrier-icon {
+  color: var(--neon-cyan);
+}
+
+.route-price-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.starts-from {
+  font-size: 11px;
+  color: var(--text-dim);
+}
+
+.route-price {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--neon-cyan);
+  font-family: 'Outfit', sans-serif;
+  text-shadow: 0 0 12px rgba(0, 242, 254, 0.4);
+}
+
+.book-route-btn {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--neon-cyan);
+  border-radius: 14px;
+  background: rgba(0, 242, 254, 0.1);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: 'Outfit', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.book-route-btn:hover {
+  background: var(--neon-cyan);
+  color: #0b031e;
+  box-shadow: 0 0 20px rgba(0, 242, 254, 0.6);
+}

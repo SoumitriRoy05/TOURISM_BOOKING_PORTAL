@@ -1,137 +1,107 @@
-.sidebar{
+/* ===========================
+   DASHBOARD SIDEBAR (Dark Glass Aurora)
+=========================== */
 
-position:fixed;
-
-left:0;
-
-top:0;
-
-width:260px;
-
-height:100vh;
-
-background:#0F172A;
-
-padding:30px 20px;
-
-display:flex;
-
-flex-direction:column;
-
-color:white;
-
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 270px;
+  height: 100vh;
+  background: rgba(16, 7, 38, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-right: 1px solid rgba(0, 242, 254, 0.2);
+  padding: 30px 22px;
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+  z-index: 100;
+  box-shadow: 10px 0 30px rgba(0, 0, 0, 0.5);
 }
 
-.sidebar-logo{
-
-display:flex;
-
-align-items:center;
-
-gap:15px;
-
-margin-bottom:50px;
-
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 45px;
+  padding-left: 5px;
 }
 
-.sidebar-logo svg{
-
-font-size:35px;
-
-color:#FF8A00;
-
+.sidebar-logo svg {
+  font-size: 32px;
+  color: var(--neon-cyan);
+  filter: drop-shadow(0 0 10px rgba(0, 242, 254, 0.6));
 }
 
-.sidebar-logo h2{
-
-margin:0;
-
-font-size:28px;
-
+.sidebar-logo h2 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 800;
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: 0.5px;
+  color: #ffffff;
 }
 
-.sidebar-logo span{
-
-font-size:13px;
-
-color:#CBD5E1;
-
+.sidebar-logo span {
+  font-size: 12px;
+  color: var(--text-muted);
+  display: block;
 }
 
-.sidebar nav{
-
-display:flex;
-
-flex-direction:column;
-
-gap:12px;
-
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.menu-item{
-
-display:flex;
-
-align-items:center;
-
-gap:15px;
-
-padding:15px;
-
-border-radius:12px;
-
-text-decoration:none;
-
-color:white;
-
-font-size:17px;
-
-transition:.3s;
-
-cursor:pointer;
-
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  border-radius: 16px;
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 15px;
+  font-weight: 600;
+  font-family: 'Outfit', sans-serif;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
-.menu-item:hover{
-
-background:#1E293B;
-
-color:#FF8A00;
-
+.menu-item:hover,
+.menu-item.active {
+  background: rgba(0, 242, 254, 0.12);
+  color: var(--neon-cyan);
+  box-shadow: 0 0 20px rgba(0, 242, 254, 0.25);
+  border: 1px solid rgba(0, 242, 254, 0.3);
 }
 
-.logout-btn{
-
-margin-top:auto;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-gap:10px;
-
-padding:15px;
-
-background:#FF8A00;
-
-color:white;
-
-border:none;
-
-border-radius:15px;
-
-cursor:pointer;
-
-font-size:17px;
-
-transition:.3s;
-
+.menu-item svg {
+  font-size: 18px;
 }
 
-.logout-btn:hover{
-
-background:#ff6b00;
-
+.logout-btn {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 14px;
+  background: rgba(255, 71, 87, 0.15);
+  border: 1px solid rgba(255, 71, 87, 0.4);
+  color: #ff4757;
+  border-radius: 16px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: 'Outfit', sans-serif;
+  transition: all 0.3s ease;
 }
+
+.logout-btn:hover {
+  background: #ff4757;
+  color: #ffffff;
+  box-shadow: 0 0 20px rgba(255, 71, 87, 0.5);
+}

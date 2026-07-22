@@ -1,6 +1,8 @@
 .destinations{
-    padding:100px 8%;
-    background:#F7F9FC;
+    padding: 100px 8%;
+    background: var(--bg-dark-secondary);
+    position: relative;
+    z-index: 10;
 }
 
 .heading{
@@ -9,25 +11,31 @@
 }
 
 .heading span{
-    color:#FF8A00;
+    color: var(--neon-cyan);
     text-transform:uppercase;
-    letter-spacing:2px;
+    letter-spacing:3px;
     font-weight:700;
+    font-size: 14px;
+    text-shadow: 0 0 10px rgba(0, 242, 254, 0.4);
 }
 
 .heading h2{
-    font-size:52px;
-    margin:15px 0;
-    color:#0F172A;
+    font-size: 48px;
+    font-weight: 800;
+    margin: 12px 0;
+    color: #ffffff;
+    font-family: 'Outfit', sans-serif;
 }
 
 .heading p{
-    color:#6B7280;
-    font-size:18px;
+    color: var(--text-muted);
+    font-size: 17px;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .destination-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
     gap:35px;
-}
+}

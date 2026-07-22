@@ -1,23 +1,36 @@
-.notification-card{
+/* ===========================
+   NOTIFICATION CARD
+=========================== */
 
-margin-top:35px;
-
-background:white;
-
-padding:30px;
-
-border-radius:22px;
-
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-
+.notification-card {
+  background: rgba(22, 11, 44, 0.75);
+  border: 1px solid rgba(0, 242, 254, 0.25);
+  backdrop-filter: blur(16px);
+  padding: 20px 25px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: #ffffff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  margin-bottom: 25px;
 }
 
-.notification-card ul{
+.noti-icon {
+  font-size: 24px;
+  color: var(--neon-cyan);
+  filter: drop-shadow(0 0 8px rgba(0, 242, 254, 0.6));
+}
 
-margin-top:20px;
+.notification-card h4 {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 4px 0;
+  font-family: 'Outfit', sans-serif;
+}
 
-padding-left:18px;
-
-line-height:2.2;
-
+.notification-card p {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  margin: 0;
 }

@@ -1,71 +1,58 @@
-.topbar{
+/* ===========================
+   DASHBOARD TOPBAR (Dark Glass Aurora)
+=========================== */
 
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-margin-bottom:40px;
-
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
 }
 
-.search-box{
-
-display:flex;
-
-align-items:center;
-
-gap:10px;
-
-background:white;
-
-padding:15px 20px;
-
-border-radius:50px;
-
-width:420px;
-
-box-shadow:0 10px 30px rgba(0,0,0,.08);
-
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(22, 11, 44, 0.75);
+  border: 1px solid rgba(0, 242, 254, 0.2);
+  backdrop-filter: blur(16px);
+  padding: 12px 20px;
+  border-radius: 40px;
+  width: 380px;
+  color: var(--neon-cyan);
 }
 
-.search-box input{
-
-border:none;
-
-outline:none;
-
-width:100%;
-
-font-size:16px;
-
+.search-box input {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #ffffff;
+  font-size: 14.5px;
+  width: 100%;
+  font-family: inherit;
 }
 
-.topbar-right{
-
-display:flex;
-
-align-items:center;
-
-gap:25px;
-
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
-.top-icon{
-
-font-size:24px;
-
-cursor:pointer;
-
+.top-icon {
+  font-size: 20px;
+  color: var(--neon-cyan);
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-.profile{
+.top-icon:hover {
+  transform: scale(1.15);
+}
 
-font-size:38px;
-
-color:#FF8A00;
-
-cursor:pointer;
-
+.profile {
+  font-size: 32px;
+  color: #ffffff;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(0, 242, 254, 0.4);
 }

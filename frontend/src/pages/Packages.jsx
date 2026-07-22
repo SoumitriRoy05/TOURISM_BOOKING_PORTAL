@@ -182,28 +182,58 @@
 //
 // export default Packages;
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 import PackageCard from "../components/PackageCard/PackageCard";
 
-import destinations from "../data/destinations";
+import destinationsData from "../data/destinations";
+
+// Destination background images of India
+import kashmirImg from "../assets/destinations/kashmir.jpg";
+import meghalayaImg from "../assets/destinations/meghalaya.jpg";
+import goaImg from "../assets/destinations/goa.jpg";
+import keralaImg from "../assets/destinations/kerala.jpg";
+import jaipurImg from "../assets/destinations/jaipur.jpg";
+import ladakhImg from "../assets/destinations/ladakh.jpg";
+import varanasiImg from "../assets/destinations/varanasi.jpg";
+import andamanImg from "../assets/destinations/andaman.jpg";
 
 import "./Packages.css";
 
 function Packages() {
-
   const [search, setSearch] = useState("");
   const [state, setState] = useState("All");
   const [sort, setSort] = useState("");
+  const [activeSlide, setActiveSlide] = useState(0);
 
-  let filtered = [...destinations];
+  const destSlides = [
+    { name: "Kashmir Paradise", location: "Jammu & Kashmir", image: kashmirImg, badge: "Snow Peaks & Houseboats" },
+    { name: "Meghalaya Wonders", location: "Northeast India", image: meghalayaImg, badge: "Living Root Bridges & Waterfalls" },
+    { name: "Goa Beach Haven", location: "West Coast", image: goaImg, badge: "Sun & Golden Sands" },
+    { name: "Kerala Backwaters", location: "South India", image: keralaImg, badge: "Tranquil Lagoons & Houseboats" },
+    { name: "Jaipur Pink City", location: "Rajasthan", image: jaipurImg, badge: "Royal Palaces & Forts" },
+    { name: "Ladakh Monasteries", location: "Trans-Himalayas", image: ladakhImg, badge: "High Altitude Passes" },
+    { name: "Varanasi Heritage", location: "Uttar Pradesh", image: varanasiImg, badge: "Sacred Ganges Ghats" },
+    { name: "Andaman Islands", location: "Bay of Bengal", image: andamanImg, badge: "Crystal Reefs & Coral Beaches" }
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveSlide((prev) => (prev + 1) % destSlides.length);
+    }, 4500);
+    return () => clearInterval(timer);
+  }, [destSlides.length]);
+
+  let filtered = [...destinationsData];
 
   // Search
-  filtered = filtered.filter((item) =>
-    item.name.toLowerCase().includes(search.toLowerCase())
-  );
+  if (search.trim()) {
+    filtered = filtered.filter((item) =>
+      item.name.toLowerCase().includes(search.toLowerCase())
+    );
+  }
 
   // State Filter
   if (state !== "All") {
@@ -232,35 +262,65 @@ function Packages() {
   }
 
   return (
-    <>
+    <div className="packages-page-wrapper">
       <Navbar />
 
-      <section className="packages-page">
+      {/* Hero Section with Destination Background Slideshow */}
+      <section className="dest-hero-section">
+        <div className="dest-slideshow-container">
+          {destSlides.map((slide, idx) => (
+            <div
+              key={idx}
+              className={`dest-slide ${idx === activeSlide ? "slide-active" : ""}`}
+              style={{ backgroundImage: `url(${slide.image})` }}
+            />
+          ))}
+        </div>
 
-        <div className="packages-header">
+        <div className="dest-hero-glow"></div>
+        <div className="dest-mesh-overlay"></div>
 
-          <h1>Explore India Tour Packages</h1>
-
-          <p>
-            Find your dream vacation across Incredible India
+        <div className="dest-hero-content">
+          <span className="dest-hero-badge">🌄 EXPLORE INCREDIBLE DESTINATIONS</span>
+          <h1 className="dest-hero-title">
+            DREAM <span className="stroke-text">DESTINATIONS</span>
+          </h1>
+          <p className="dest-hero-subtitle">
+            Handpicked holiday packages, scenic landscapes, and cultural journeys across India.
           </p>
 
+          {/* Location Badge */}
+          <div className="dest-caption-badge">
+            <div>
+              <strong>📍 {destSlides[activeSlide].name}</strong>
+              <span> ({destSlides[activeSlide].location}) — <em>{destSlides[activeSlide].badge}</em></span>
+            </div>
+            <div className="slide-dots-row">
+              {destSlides.map((_, idx) => (
+                <button
+                  key={idx}
+                  className={`dot-pill ${idx === activeSlide ? "dot-pill-active" : ""}`}
+                  onClick={() => setActiveSlide(idx)}
+                />
+              ))}
+            </div>
+          </div>
         </div>
+      </section>
+
+      {/* Filter & Listing Content */}
+      <section className="packages-page">
         <div className="chips">
-
-          <button>🏔 Mountains</button>
-
-          <button>🏖 Beaches</button>
-
-          <button>🌿 Nature</button>
-
-          <button>🏛 Heritage</button>
-
-          <button>🙏 Spiritual</button>
-
+          <button onClick={() => setState("All")}>✨ All Places</button>
+          <button onClick={() => setState("Kashmir")}>🏔 Kashmir</button>
+          <button onClick={() => setState("Goa")}>🏖 Goa</button>
+          <button onClick={() => setState("Kerala")}>🌿 Kerala</button>
+          <button onClick={() => setState("Jaipur")}>🏛 Jaipur</button>
+          <button onClick={() => setState("Ladakh")}>❄ Ladakh</button>
+          <button onClick={() => setState("Meghalaya")}>🌊 Meghalaya</button>
         </div>
-        <div className="filter-bar">
 
+        <div className="filter-bar">
           <input
             type="text"
             placeholder="🔍 Search Destination..."
@@ -273,14 +333,14 @@ function Packages() {
             onChange={(e) => setState(e.target.value)}
           >
             <option value="All">All Destinations</option>
-            <option>Kashmir</option>
-            <option>Goa</option>
-            <option>Kerala</option>
-            <option>Meghalaya</option>
-            <option>Jaipur</option>
-            <option>Ladakh</option>
-            <option>Varanasi</option>
-            <option>Andaman</option>
+            <option value="Kashmir">Kashmir</option>
+            <option value="Goa">Goa</option>
+            <option value="Kerala">Kerala</option>
+            <option value="Meghalaya">Meghalaya</option>
+            <option value="Jaipur">Jaipur</option>
+            <option value="Ladakh">Ladakh</option>
+            <option value="Varanasi">Varanasi</option>
+            <option value="Andaman">Andaman</option>
           </select>
 
           <select
@@ -292,16 +352,14 @@ function Packages() {
             <option value="high">Price High → Low</option>
             <option value="rating">Highest Rated</option>
           </select>
-
         </div>
 
         <PackageCard data={filtered} />
-
       </section>
 
       <Footer />
-    </>
+    </div>
   );
 }
 
-export default Packages;
+export default Packages;

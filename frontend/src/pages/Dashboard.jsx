@@ -10,31 +10,35 @@ import DashboardGrid from "../components/Dashboard/DashboardGrid";
 import TrendingDestinations from "../components/Dashboard/TrendingDestinations";
 import NotificationCard from "../components/Dashboard/NotificationCard";
 import FloatingAI from "../components/Dashboard/FloatingAI";
+
 function Dashboard() {
   return (
-    <div className="dashboard">
-
-      <Sidebar />
-
-      <div className="dashboard-main">
-
-        <Topbar />
-
-        <WelcomeBanner />
-
-        <StatsCards />
-        <QuickActions />
-        <UpcomingTrip />
-        <DashboardGrid />
-        <TrendingDestinations />
-
-        <NotificationCard />
-
-        <FloatingAI />
+    <div className="dashboard-page-dark">
+      {/* Image 2 Liquid Aurora Fluid Blobs */}
+      <div className="dashboard-aurora-bg">
+        <div className="liquid-blob blob-cyan"></div>
+        <div className="liquid-blob blob-purple"></div>
+        <div className="liquid-blob blob-deep"></div>
+        <div className="dashboard-mesh-grid"></div>
       </div>
 
+      <div className="dashboard-layout">
+        <Sidebar />
+
+        <main className="dashboard-main-content">
+          <Topbar />
+          <WelcomeBanner />
+          <StatsCards />
+          <QuickActions />
+          <UpcomingTrip />
+          <DashboardGrid />
+          <TrendingDestinations />
+          <NotificationCard />
+          <FloatingAI />
+        </main>
+      </div>
     </div>
   );
 }
 
-export default Dashboard;
+export default Dashboard;

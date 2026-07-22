@@ -1,213 +1,145 @@
-.trip-container{
+/* ===========================
+   UPCOMING TRIP CARD (Dark Aurora Theme)
+=========================== */
 
-display:flex;
-
-background:white;
-
-border-radius:25px;
-
-overflow:hidden;
-
-box-shadow:0 12px 35px rgba(0,0,0,.08);
-
-margin-top:40px;
-
+.trip-container {
+  background: rgba(22, 11, 44, 0.75);
+  border: 1px solid rgba(0, 242, 254, 0.25);
+  backdrop-filter: blur(16px);
+  border-radius: 28px;
+  padding: 30px;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  margin-bottom: 25px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  color: #ffffff;
 }
 
-.trip-image{
-
-width:38%;
-
+.trip-image img {
+  width: 280px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 242, 254, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
 }
 
-.trip-image img{
-
-width:100%;
-
-height:100%;
-
-object-fit:cover;
-
+.trip-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.trip-details{
-
-flex:1;
-
-padding:35px;
-
+.trip-tag {
+  align-self: flex-start;
+  font-size: 11px;
+  font-weight: 800;
+  color: #0b031e;
+  background: var(--neon-cyan);
+  padding: 4px 12px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 0 12px rgba(0, 242, 254, 0.4);
 }
 
-.trip-tag{
-
-background:#EEF2FF;
-
-color:#4F46E5;
-
-padding:8px 18px;
-
-border-radius:50px;
-
-font-size:14px;
-
-font-weight:600;
-
+.trip-details h2 {
+  font-size: 26px;
+  font-weight: 800;
+  font-family: 'Outfit', sans-serif;
+  margin: 0;
 }
 
-.trip-details h2{
-
-font-size:34px;
-
-margin:20px 0;
-
+.trip-details p {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0;
 }
 
-.trip-details p{
-
-color:#64748B;
-
-line-height:1.7;
-
-margin-bottom:25px;
-
+.trip-info {
+  display: flex;
+  gap: 20px;
+  margin: 6px 0;
 }
 
-.trip-info{
-
-display:flex;
-
-gap:30px;
-
-margin-bottom:30px;
-
+.trip-info div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  color: var(--neon-cyan);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 6px 14px;
+  border-radius: 12px;
 }
 
-.trip-info div{
-
-display:flex;
-
-align-items:center;
-
-gap:10px;
-
-color:#334155;
-
+.progress-box {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
-.progress-text{
-
-display:flex;
-
-justify-content:space-between;
-
-margin-bottom:10px;
-
-font-weight:600;
-
+.progress-text {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--text-muted);
 }
 
-.progress-bar{
-
-height:10px;
-
-background:#E2E8F0;
-
-border-radius:50px;
-
-overflow:hidden;
-
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
 }
 
-.progress-fill{
-
-width:80%;
-
-height:100%;
-
-background:linear-gradient(to right,#FF8A00,#FFA726);
-
-border-radius:50px;
-
+.progress-fill {
+  width: 80%;
+  height: 100%;
+  background: linear-gradient(90deg, var(--neon-cyan) 0%, var(--neon-purple-deep) 100%);
+  box-shadow: 0 0 10px rgba(0, 242, 254, 0.6);
 }
 
-.trip-footer{
-
-margin-top:35px;
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
+.trip-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5px;
 }
 
-.trip-footer h3{
-
-color:#F97316;
-
-font-size:28px;
-
+.trip-footer h3 {
+  font-size: 16px;
+  color: #ffffff;
+  font-weight: 700;
 }
 
-.trip-footer button{
-
-padding:15px 30px;
-
-border:none;
-
-background:#FF8A00;
-
-color:white;
-
-border-radius:14px;
-
-cursor:pointer;
-
-font-size:16px;
-
-font-weight:600;
-
-transition:.3s;
-
+.trip-footer button {
+  padding: 10px 22px;
+  background: var(--neon-cyan);
+  border: none;
+  border-radius: 12px;
+  color: #0b031e;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: 'Outfit', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.trip-footer button:hover{
-
-background:#F97316;
-
+.trip-footer button:hover {
+  box-shadow: 0 0 15px rgba(0, 242, 254, 0.6);
+  transform: translateY(-2px);
 }
 
-@media(max-width:1000px){
-
-.trip-container{
-
-flex-direction:column;
-
-}
-
-.trip-image{
-
-width:100%;
-
-height:280px;
-
-}
-
-.trip-info{
-
-flex-direction:column;
-
-gap:15px;
-
-}
-
-.trip-footer{
-
-flex-direction:column;
-
-gap:20px;
-
-}
-
+@media (max-width: 900px) {
+  .trip-container {
+    flex-direction: column;
+  }
+  .trip-image img {
+    width: 100%;
+  }
 }

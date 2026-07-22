@@ -1,37 +1,146 @@
-.flight-hero{
-    height:70vh;
-    background-size:cover;
-    background-position:center;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+/* ===========================
+   FLIGHT HERO (Dark Aurora Theme)
+=========================== */
+
+.flight-hero-aurora {
+  position: relative;
+  width: 100%;
+  padding: 150px 20px 110px 20px;
+  background: var(--bg-dark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
 }
 
-.flight-overlay{
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,.55);
-    color:white;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
+/* Background Video Styling */
+.flight-bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.35;
+  z-index: 1;
+  filter: contrast(1.1) brightness(0.9);
 }
 
-.flight-overlay span{
-    background:rgba(255,255,255,.18);
-    padding:12px 28px;
-    border-radius:40px;
-    margin-bottom:25px;
-    backdrop-filter:blur(12px);
+.flight-video-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(11, 3, 30, 0.7) 0%, rgba(11, 3, 30, 0.88) 70%, rgba(11, 3, 30, 0.98) 100%);
+  z-index: 2;
+  pointer-events: none;
 }
 
-.flight-overlay h1{
-    font-size:70px;
-    margin-bottom:20px;
+
+.flight-hero-glow {
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1200px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(0, 242, 254, 0.25) 0%, rgba(123, 44, 191, 0.3) 50%, transparent 75%);
+  filter: blur(50px);
+  pointer-events: none;
+  z-index: 1;
 }
 
-.flight-overlay p{
-    font-size:22px;
+.flight-hero-container {
+  position: relative;
+  z-index: 10;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+.flight-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 24px;
+  background: rgba(0, 242, 254, 0.12);
+  border: 1px solid var(--neon-cyan);
+  border-radius: 40px;
+  color: var(--neon-cyan);
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 25px;
+  box-shadow: 0 0 20px rgba(0, 242, 254, 0.3);
+  backdrop-filter: blur(12px);
+}
+
+.badge-plane-icon {
+  font-size: 14px;
+  transform: rotate(-30deg);
+}
+
+.flight-hero-title {
+  font-size: 68px;
+  font-weight: 900;
+  line-height: 1.1;
+  color: #ffffff;
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.title-highlight {
+  color: #ffffff;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+.title-stroke {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--neon-cyan);
+  text-shadow: 0 0 25px rgba(0, 242, 254, 0.5);
+}
+
+.flight-hero-subtitle {
+  font-size: 18px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  max-width: 680px;
+  margin-bottom: 35px;
+}
+
+.flight-perks-row {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.perk-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 30px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 13.5px;
+  font-weight: 500;
+  backdrop-filter: blur(10px);
+}
+
+.perk-icon {
+  color: var(--neon-cyan);
+}
+
+@media (max-width: 768px) {
+  .flight-hero-title {
+    font-size: 42px;
+  }
+  .flight-hero-subtitle {
+    font-size: 15px;
+  }
+}

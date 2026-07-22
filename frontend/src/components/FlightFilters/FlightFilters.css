@@ -1,53 +1,88 @@
-.flight-filters{
+/* ===========================
+   FLIGHT FILTERS SIDEBAR
+=========================== */
 
-background:white;
-
-padding:28px;
-
-border-radius:24px;
-
-box-shadow:0 15px 35px rgba(0,0,0,.08);
-
-position:sticky;
-
-top:120px;
-
+.flight-filters-panel {
+  background: rgba(22, 11, 44, 0.75);
+  border: 1px solid rgba(0, 242, 254, 0.2);
+  backdrop-filter: blur(16px);
+  padding: 26px;
+  border-radius: 24px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  position: sticky;
+  top: 100px;
 }
 
-.flight-filters h2{
-
-margin-bottom:30px;
-
-color:#0F172A;
-
+.filter-panel-header {
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 22px;
 }
 
-.filter-group{
-
-margin-bottom:30px;
-
+.filter-panel-header h3 {
+  font-size: 20px;
+  font-weight: 800;
+  color: #ffffff;
+  font-family: 'Outfit', sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.filter-group h4{
-
-margin-bottom:15px;
-
-color:#FF7A00;
-
+.filter-title-icon {
+  color: var(--neon-cyan);
+  font-size: 16px;
 }
 
-.filter-group label{
-
-display:block;
-
-margin:10px 0;
-
-cursor:pointer;
-
+.filter-group {
+  margin-bottom: 25px;
 }
 
-input[type="range"]{
-
-width:100%;
-
+.filter-group h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--neon-cyan);
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
 }
+
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  color: var(--text-muted);
+  font-size: 14.5px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.checkbox-row:hover {
+  color: #ffffff;
+}
+
+.checkbox-row input[type="checkbox"] {
+  accent-color: var(--neon-cyan);
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.price-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.price-value-display {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--neon-cyan);
+}
+
+.neon-range-input {
+  width: 100%;
+  accent-color: var(--neon-cyan);
+  cursor: pointer;
+}

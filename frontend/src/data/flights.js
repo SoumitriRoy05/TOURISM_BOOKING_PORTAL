@@ -1,77 +1,140 @@
 const flights = [
-
-{
-
-id:1,
-
-airline:"IndiGo",
-
-from:"Delhi",
-
-to:"Goa",
-
-departure:"06:10",
-
-arrival:"08:45",
-
-duration:"2h 35m",
-
-stops:"Non Stop",
-
-price:"₹4,299",
-
-badge:"Cheapest"
-
-},
-
-{
-
-id:2,
-
-airline:"Air India",
-
-from:"Mumbai",
-
-to:"Leh",
-
-departure:"09:15",
-
-arrival:"12:35",
-
-duration:"3h 20m",
-
-stops:"1 Stop",
-
-price:"₹6,499",
-
-badge:"Fastest"
-
-},
-
-{
-
-id:3,
-
-airline:"Vistara",
-
-from:"Bangalore",
-
-to:"Kochi",
-
-departure:"11:00",
-
-arrival:"12:15",
-
-duration:"1h 15m",
-
-stops:"Non Stop",
-
-price:"₹3,899",
-
-badge:"Best Value"
-
-}
-
+  {
+    id: 1,
+    airline: "IndiGo",
+    code: "6E-2041",
+    from: "Delhi (DEL)",
+    to: "Goa (GOI)",
+    departure: "06:10 AM",
+    arrival: "08:45 AM",
+    duration: "2h 35m",
+    stops: "Non Stop",
+    price: 4299,
+    formattedPrice: "₹4,299",
+    badge: "Cheapest",
+    logoText: "IndiGo",
+    cabin: "Economy",
+    seatsLeft: 4
+  },
+  {
+    id: 2,
+    airline: "Air India",
+    code: "AI-445",
+    from: "Mumbai (BOM)",
+    to: "Leh (IXL)",
+    departure: "09:15 AM",
+    arrival: "12:35 PM",
+    duration: "3h 20m",
+    stops: "1 Stop",
+    price: 6499,
+    formattedPrice: "₹6,499",
+    badge: "Fastest",
+    logoText: "Air India",
+    cabin: "Economy",
+    seatsLeft: 2
+  },
+  {
+    id: 3,
+    airline: "Vistara",
+    code: "UK-812",
+    from: "Bangalore (BLR)",
+    to: "Kochi (COK)",
+    departure: "11:00 AM",
+    arrival: "12:15 PM",
+    duration: "1h 15m",
+    stops: "Non Stop",
+    price: 3899,
+    formattedPrice: "₹3,899",
+    badge: "Best Value",
+    logoText: "Vistara",
+    cabin: "Premium Economy",
+    seatsLeft: 6
+  },
+  {
+    id: 4,
+    airline: "Akasa Air",
+    code: "QP-1142",
+    from: "Delhi (DEL)",
+    to: "Srinagar (SXR)",
+    departure: "07:30 AM",
+    arrival: "09:05 AM",
+    duration: "1h 35m",
+    stops: "Non Stop",
+    price: 5199,
+    formattedPrice: "₹5,199",
+    badge: "Top Rated",
+    logoText: "Akasa Air",
+    cabin: "Economy",
+    seatsLeft: 5
+  },
+  {
+    id: 5,
+    airline: "IndiGo",
+    code: "6E-512",
+    from: "Mumbai (BOM)",
+    to: "Jaipur (JAI)",
+    departure: "02:15 PM",
+    arrival: "04:00 PM",
+    duration: "1h 45m",
+    stops: "Non Stop",
+    price: 3599,
+    formattedPrice: "₹3,599",
+    badge: "Cheapest",
+    logoText: "IndiGo",
+    cabin: "Economy",
+    seatsLeft: 8
+  },
+  {
+    id: 6,
+    airline: "SpiceJet",
+    code: "SG-819",
+    from: "Kolkata (CCU)",
+    to: "Bagdogra (IXB)",
+    departure: "10:45 AM",
+    arrival: "11:55 AM",
+    duration: "1h 10m",
+    stops: "Non Stop",
+    price: 3299,
+    formattedPrice: "₹3,299",
+    badge: "Special Deal",
+    logoText: "SpiceJet",
+    cabin: "Economy",
+    seatsLeft: 3
+  },
+  {
+    id: 7,
+    airline: "Air India",
+    code: "AI-782",
+    from: "Chennai (MAA)",
+    to: "Port Blair (IXZ)",
+    departure: "05:40 AM",
+    arrival: "08:10 AM",
+    duration: "2h 30m",
+    stops: "Non Stop",
+    price: 7899,
+    formattedPrice: "₹7,899",
+    badge: "Luxury Stay Included",
+    logoText: "Air India",
+    cabin: "Business",
+    seatsLeft: 2
+  },
+  {
+    id: 8,
+    airline: "Vistara",
+    code: "UK-954",
+    from: "Hyderabad (HYD)",
+    to: "Goa (GOI)",
+    departure: "01:20 PM",
+    arrival: "02:40 PM",
+    duration: "1h 20m",
+    stops: "Non Stop",
+    price: 4150,
+    formattedPrice: "₹4,150",
+    badge: "Best Value",
+    logoText: "Vistara",
+    cabin: "Economy",
+    seatsLeft: 7
+  }
 ];
 
 export default flights;
